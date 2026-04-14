@@ -1,0 +1,146 @@
+/* ===== ПРАВОВАЯ СТРАНИЦА ===== */
+.legal-page {
+    width: 100%;
+    padding: 60px 0;
+    
+    min-height: 70vh;
+}
+
+.legal-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 40px;
+}
+
+.legal-section {
+    background: white;
+    border-radius: 40px;
+    padding: 50px;
+    margin-bottom: 50px;
+    box-shadow: 0 20px 40px rgba(121, 23, 12, 0.1);
+}
+
+.legal-title {
+    color: #79170c;
+    font-size: clamp(2rem, 4vw, 2.8rem);
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 3px solid #b93a2c;
+    display: inline-block;
+}
+
+.legal-date {
+    color: #999;
+    font-size: 0.9rem;
+    margin-bottom: 30px;
+    font-style: italic;
+}
+
+.legal-content h2 {
+    color: #79170c;
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin: 30px 0 15px;
+    padding-left: 15px;
+    border-left: 4px solid #b93a2c;
+}
+
+.legal-content p {
+    color: #333;
+    font-size: 1rem;
+    line-height: 1.7;
+    margin-bottom: 15px;
+    font-family: 'Georgia', serif;
+}
+
+.legal-content ul {
+    margin: 15px 0 15px 30px;
+}
+
+.legal-content li {
+    color: #333;
+    font-size: 1rem;
+    line-height: 1.7;
+    margin-bottom: 8px;
+}
+
+.legal-content a {
+    color: #79170c;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.legal-content a:hover {
+    color: #b93a2c;
+    text-decoration: underline;
+}
+
+/* Кнопка возврата */
+.legal-back {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.back-button {
+    display: inline-block;
+    background: linear-gradient(135deg, #79170c, #b93a2c);
+    color: white;
+    text-decoration: none;
+    padding: 12px 35px;
+    border-radius: 60px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.back-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(121, 23, 12, 0.3);
+    background: linear-gradient(135deg, #b93a2c, #79170c);
+    border-color: white;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .legal-container {
+        padding: 0 20px;
+    }
+    
+    .legal-section {
+        padding: 30px 25px;
+    }
+    
+    .legal-title {
+        font-size: 1.8rem;
+    }
+    
+    .legal-content h2 {
+        font-size: 1.3rem;
+    }
+    
+    .legal-content p,
+    .legal-content li {
+        font-size: 0.95rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .legal-section {
+        padding: 25px 20px;
+    }
+    
+    .legal-title {
+        font-size: 1.5rem;
+    }
+    
+    .legal-content h2 {
+        font-size: 1.2rem;
+    }
+    
+    .legal-content ul {
+        margin-left: 20px;
+    }
+}

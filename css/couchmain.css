@@ -1,0 +1,226 @@
+/* ===== СТРАНИЦА ПРЕПОДАВАТЕЛЕЙ ===== */
+
+/* Основные стили */
+.teachers-section {
+    max-width: 1400px;
+    margin: 80px auto;
+    padding: 0 40px;
+    text-align: center;
+}
+
+.teachers-title {
+    font-family: 'Georgia', serif;
+    color: #79170c;
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.teachers-title::after {
+    content: '';
+    display: block;
+    width: 150px;
+    height: 4px;
+    background: linear-gradient(90deg, #79170c, #b93a2c, #79170c);
+    margin: 20px auto 0;
+    border-radius: 2px;
+}
+
+.teachers-subtitle {
+    text-align: center;
+    color: #666;
+    font-size: clamp(1rem, 2.5vw, 1.3rem);
+    margin-bottom: 60px;
+    font-family: 'Georgia', serif;
+    font-style: italic;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 20px;
+}
+
+/* Сетка преподавателей */
+.teachers-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(280px, 500px));
+    justify-content: center;
+    gap: 50px;
+}
+
+/* Карточка преподавателя */
+.teacher-card {
+    font-family: 'Georgia', serif;
+    background: white;
+    border-radius: 30px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    box-shadow: 0 10px 30px rgba(121, 23, 12, 0.1);
+    padding: 0 0 25px 0;
+}
+
+.teacher-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(121, 23, 12, 0.2);
+}
+
+.teacher-card img {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.teacher-card:hover img {
+    transform: scale(1.05);
+}
+
+.teacher-name {
+    display: inline-block;
+    font-size: clamp(1.5rem, 3vw, 1.8rem);
+    font-weight: bold;
+    margin: 20px 20px 10px;
+    text-decoration: none;
+    color: #79170c;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.teacher-name::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(90deg, #79170c, #b93a2c);
+    transition: width 0.3s ease;
+}
+
+.teacher-name:hover {
+    color: #b93a2c;
+}
+
+.teacher-name:hover::after {
+    width: 100%;
+}
+
+.teacher-card p {
+    font-size: clamp(1rem, 2vw, 1.2rem);
+    color: #333;
+    margin: 10px 20px 20px;
+    line-height: 1.5;
+    font-family: 'Georgia', serif;
+}
+
+.teacher-specialization {
+    display: inline-block;
+    background: rgba(121, 23, 12, 0.1);
+    padding: 5px 15px;
+    border-radius: 50px;
+    font-size: clamp(0.85rem, 1.8vw, 1rem);
+    color: #79170c;
+    margin: 0 20px 15px;
+    font-weight: 500;
+}
+
+.teacher-experience {
+    color: #666;
+    font-size: clamp(0.85rem, 1.8vw, 0.95rem);
+    margin: 10px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.teacher-experience::before {
+    content: '⭐️';
+    font-size: 1rem;
+}
+
+/* Основной контент */
+main {
+    width: 100%;
+}
+
+h1 {
+    text-align: center;
+    margin: 40px auto 60px;
+    font-size: clamp(28px, 5vw, 60px);
+    max-width: 1400px;
+    padding: 0 20px;
+    color: #79170c;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+} 
+/* =========================
+   📱 АДАПТИВ КАРТОЧЕК
+   ========================= */
+
+/* Планшеты */
+@media (max-width: 992px) {
+
+    .teachers-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+    }
+
+    .teachers-section {
+        padding: 0 20px;
+    }
+
+    .teacher-card {
+        font-size: 30px;
+    }
+}
+
+/* 📱 Телефоны */
+@media (max-width: 768px) {
+
+    /* 1 карточка в ряд */
+    .teachers-grid {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+
+    .teachers-section {
+        padding: 0 15px;
+        margin: 60px auto;
+    }
+
+    .teacher-card {
+        font-size: 24px;
+    }
+
+    .teacher-name {
+        font-size: 22px;
+    }
+
+    .teacher-card p {
+        font-size: 16px;
+    }
+}
+
+/* 📱 Маленькие телефоны */
+@media (max-width: 480px) {
+
+    .teachers-grid {
+        gap: 20px;
+    }
+
+    .teacher-card {
+        font-size: 20px;
+    }
+    .teacher-name {
+        font-size: 18px;
+    }
+
+    .teacher-card p {
+        font-size: 14px;
+    }
+}

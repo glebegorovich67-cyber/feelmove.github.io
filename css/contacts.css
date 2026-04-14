@@ -1,0 +1,276 @@
+main {
+    max-width: 1400px;
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Заголовок КОНТАКТЫ */
+#h112 {
+    font-size: clamp(48px, 8vw, 88px);
+    text-align: center;
+    margin: 80px auto 40px;
+    position: relative;
+    color: #000000;
+    width: 100%;
+}
+
+#h112::after {
+    content: '';
+    display: block;
+    width: 200px;
+    height: 4px;
+    background: linear-gradient(90deg, #79170c, #b93a2c);
+    margin: 20px auto 0;
+    border-radius: 2px;
+}
+
+/* Контактная информация */
+.titles {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 100px;
+    margin: 60px auto;
+    width: 100%;
+    flex-wrap: wrap;
+}
+
+.numb, .mail {
+    text-align: center;
+    min-width: 300px;
+}
+
+.numb p:first-child,
+.mail p:first-child {
+    font-size: clamp(20px, 3vw, 24px);
+    color: #79170c;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.numb p:last-child,
+.mail p:last-child {
+    font-size: clamp(24px, 4vw, 36px);
+    font-weight: 500;
+}
+
+/* Заголовок НАШЕ РАСПОЛОЖЕНИЕ */
+.location {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 60px 0;
+}
+
+.location h1 {
+    font-size: clamp(40px, 6vw, 88px);
+    text-align: center;
+    margin: 40px auto 60px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    width: 100%;
+}
+
+.location h1::before,
+.location h1::after {
+    content: '';
+    height: 3px;
+    width: 200px;
+    background: linear-gradient(90deg, transparent, #79170c, #b93a2c, #79170c, transparent);
+}
+
+@media (max-width: 768px) {
+    .location h1::before,
+    .location h1::after {
+        width: 80px;
+    }
+}
+
+@media (max-width: 480px) {
+    .location h1::before,
+    .location h1::after {
+        width: 40px;
+    }
+}
+
+/* Адрес  */
+#lct {
+    text-align: center;
+    font-size: clamp(24px, 4vw, 40px);
+    margin: 30px auto;
+    color: #79170c;
+    font-weight: bold;
+    width: 100%;
+}
+
+/* Карта  */
+.map {
+    text-align: center;
+    margin: 40px auto;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.map iframe {
+    width: 100%;
+    max-width: 1200px;
+    height: clamp(400px, 50vw, 600px);
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+/* Заголовок ГРАФИК РАБОТЫ  */
+#h113 {
+    font-size: clamp(40px, 6vw, 88px);
+    text-align: center;
+    margin: 80px auto 60px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    width: 100%;
+}
+
+#h113::before,
+#h113::after {
+    content: '';
+    height: 3px;
+    width: 200px;
+    background: linear-gradient(90deg, transparent, #79170c, #b93a2c, #79170c, transparent);
+}
+
+@media (max-width: 768px) {
+    #h113::before,
+    #h113::after {
+        width: 80px;
+    }
+}
+
+@media (max-width: 480px) {
+    #h113::before,
+    #h113::after {
+        width: 40px;
+    }
+}
+/* Блок с кнопками и расписанием  */
+.bitons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    margin: 40px auto 80px;
+    width: 100%;
+    max-width: 1400px;
+    flex-wrap: wrap;
+}
+.buton {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 300px;
+    flex: 1 1 400px;
+}
+.call, .vk, .tg {
+    margin: 20px 0;
+    text-align: center;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.CALL1, .VK1, .tg1 {
+    background: linear-gradient(135deg, #79170c, #b93a2c);
+    color: white;
+    text-decoration: none;
+    padding: 20px 50px;
+    border-radius: 50px;
+    font-size: clamp(24px, 3vw, 32px);
+    font-weight: bold;
+    display: inline-block;
+    transition: 0.3s;
+    box-shadow: 0 4px 15px rgba(121,23,12,0.3);
+    min-width: 250px;
+    text-align: center;
+}
+.CALL1:hover, .VK1:hover, .tg1:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(121,23,12,0.5);
+    background: linear-gradient(135deg, #b93a2c, #79170c);
+}
+
+/* Расписание */
+.schedule {
+    background: linear-gradient(135deg, #79170c, #b93a2c);
+    padding: 50px;
+    border-radius: 30px;
+    color: white;
+    min-width: 300px;
+    flex: 1 1 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0 20px 40px rgba(121,23,12,0.3);
+}
+#p12, #p13 {
+    font-size: clamp(32px, 5vw, 48px);
+    margin: 15px 0;
+    text-align: center;
+    font-weight: bold;
+    width: 100%;
+}
+#p12 {
+    border-bottom: 2px solid rgba(255,255,255,0.3);
+    padding-bottom: 15px;
+}
+
+/* Медиа-запросы для мобильных устройств */
+@media (max-width: 1200px) {
+    .titles {
+        gap: 50px;
+    }
+}
+
+@media (max-width: 768px) {
+    .titles {
+        flex-direction: column;
+        gap: 30px;
+    }
+    
+    .numb, .mail {
+        width: 100%;
+        max-width: 400px;
+    }
+    
+    .bitons {
+        flex-direction: column;
+    }
+    
+    .buton, .schedule {
+        width: 100%;
+        max-width: 500px;
+    }
+    
+    .schedule {
+        padding: 40px 30px;
+    }
+}
+
+@media (max-width: 480px) {
+    .CALL1, .VK1, .tg1 {
+        padding: 15px 30px;
+        min-width: 200px;
+        font-size: 20px;
+    }
+    
+    .schedule {
+        padding: 30px 20px;
+    }
+}

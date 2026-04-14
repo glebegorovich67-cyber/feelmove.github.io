@@ -1,0 +1,882 @@
+/* ===== ОСНОВА СТРАНИЦЫ ===== */
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.teacher-page {
+    max-width: 1200px;
+    margin: 100px auto;
+    padding: 0 40px;
+    font-family: 'Georgia', sans-serif;
+}
+
+/* ===== ОСНОВНОЙ БЛОК ===== */
+
+.teacher-page-container {
+    display: flex;
+    gap: 60px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+/* ===== ФОТО ===== */
+
+.teacher-page-photo {
+    width: 450px;
+    max-width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    border-radius: 25px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+}
+
+/* ===== ИНФОРМАЦИЯ ===== */
+
+.teacher-page-info {
+    flex: 1;
+    min-width: 300px;
+}
+
+.teacher-page-info h1 {
+    font-size: 42px;
+    margin-bottom: 20px;
+    color: #79170c;
+}
+
+.teacher-page-info h3 a {
+    color: #b93a2c;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.teacher-page-info h3 a:hover {
+    color: #79170c;
+    text-decoration: underline;
+}
+
+.teacher-page-info p {
+    font-size: 18px;
+    line-height: 1.7;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* ===== ДОП. БЛОК С НАПРАВЛЕНИЯМИ ===== */
+
+.teacher-styles {
+    margin-top: 30px;
+}
+
+.teacher-styles h4 {
+    font-size: 20px;
+    margin-bottom: 15px;
+    color: #79170c;
+}
+
+.teacher-styles ul {
+    list-style: none;
+    padding: 0;
+}
+
+.teacher-styles li {
+    background: rgba(121, 23, 12, 0.08);
+    padding: 10px 15px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    font-size: 16px;
+}
+
+/* ===== КНОПКА ЗАПИСИ ===== */
+
+.teacher-button {
+    display: inline-block;
+    margin-top: 30px;
+    padding: 14px 28px;
+    background: linear-gradient(135deg, #79170c, #b93a2c);
+    color: white;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: bold;
+    transition: 0.3s ease;
+}
+
+.teacher-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(121, 23, 12, 0.4);
+}
+
+/* ===== АДАПТАЦИЯ ===== */
+
+@media (max-width: 992px) {
+    .teacher-page-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .teacher-page-photo {
+        width: 350px;
+    }
+
+    .teacher-page-info h1 {
+        font-size: 34px;
+    }
+}
+
+@media (max-width: 600px) {
+    .teacher-page {
+        margin: 60px auto;
+        padding: 0 20px;
+    }
+
+    .teacher-page-photo {
+        width: 100%;
+    }
+
+    .teacher-page-info h1 {
+        font-size: 28px;
+    }
+
+    .teacher-page-info p {
+        font-size: 16px;
+    }
+}
+/* Футер */
+.footer {
+    background: linear-gradient(135deg, #2c1810 0%, #1a0f0a 100%);
+    color: #fff;
+    padding: 60px 0 0;
+    margin-top: 0;
+    position: relative;
+    font-family: 'Vetrino', Arial, sans-serif;
+}
+.footer::before {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: 0;
+    right: 0;
+    height: 10px;
+    background: linear-gradient(90deg, #79170c, #b93a2c, #79170c);
+    box-shadow: 0 0 20px rgba(121, 23, 12, 0.5);
+}
+.footer-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 40px;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr 1fr 1fr;
+    gap: 40px;
+    margin-bottom: 50px;
+}
+.footer-col {
+    display: flex;
+    flex-direction: column;
+}
+.footer-logo img {
+    width: 180px;
+    height: auto;
+    margin-bottom: 20px;
+    filter: brightness(1) drop-shadow(0 4px 8px rgba(0,0,0,0.3));
+    transition: transform 0.3s ease;
+}
+.footer-logo img:hover {
+    transform: scale(1.05);
+}
+
+.footer-description {
+    font-size: 16px;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 25px;
+    font-family: Georgia, serif;
+    font-style: italic;
+}
+
+.footer-social {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.social-link {
+    width: 45px;
+    height: 45px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.social-link:hover {
+    background: #79170c;
+    transform: translateY(-5px);
+    border-color: transparent;
+    box-shadow: 0 5px 15px rgba(121, 23, 12, 0.4);
+}
+
+.footer-title {
+    color: #fff;
+    font-size: clamp(18px, 2vw, 22px);
+    font-weight: bold;
+    margin-bottom: 25px;
+    position: relative;
+    padding-bottom: 10px;
+    letter-spacing: 2px;
+}
+
+.footer-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 50px;
+    height: 3px;
+    background: linear-gradient(90deg, #79170c, #b93a2c);
+    border-radius: 2px;
+}
+
+.footer-menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-menu li {
+    margin-bottom: 12px;
+}
+
+.footer-menu a {
+    color: rgba(255, 255, 255, 0.8);
+    text-decoration: none;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    display: inline-block;
+    position: relative;
+}
+
+.footer-menu a::before {
+    content: '›';
+    position: absolute;
+    left: -20px;
+    opacity: 0;
+    transition: all 0.3s ease;
+    color: #b93a2c;
+    font-size: 20px;
+     top: -4px;
+     padding-right: 5px;
+}
+
+.footer-menu a:hover {
+    color: #fff;
+    transform: translateX(15px);
+}
+
+.footer-menu a:hover::before {
+    opacity: 1;
+    left: -10px;
+}
+
+.footer-contact {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.contact-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    margin-bottom: 18px;
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 15px;
+    line-height: 1.5;
+}
+
+.contact-icon {
+    font-size: 18px;
+    min-width: 24px;
+}
+
+.contact-item a {
+    color: rgba(255, 255, 255, 0.9);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.contact-item a:hover {
+    color: #b93a2c;
+}
+
+.footer-trial-text {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 25px;
+    padding: 15px;
+    background: rgba(121, 23, 12, 0.2);
+    border-radius: 10px;
+    border-left: 4px solid #79170c;
+}
+
+.footer-button {
+    display: inline-block;
+    background: linear-gradient(135deg, #79170c, #b93a2c);
+    color: white;
+    text-decoration: none;
+    padding: 14px 28px;
+    border-radius: 50px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    border: none;
+    text-align: center;
+    margin-bottom: 25px;
+    box-shadow: 0 4px 15px rgba(121, 23, 12, 0.3);
+}
+
+.footer-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(121, 23, 12, 0.5);
+    background: linear-gradient(135deg, #b93a2c, #79170c);
+}
+
+.footer-payment {
+    margin-top: 15px;
+}
+
+.footer-payment span {
+    display: block;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.payment-icons {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.payment-icon {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-size: 12px;
+    font-weight: bold;
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 30px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.footer-copyright {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 14px;
+}
+
+.footer-legal {
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.footer-legal a {
+    color: rgba(255, 255, 255, 0.7);
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.3s ease;
+}
+
+.footer-legal a:hover {
+    color: #b93a2c;
+}
+
+/* Медиа-запросы для адаптации */
+/*ДЛЯ БОЛЬШИХ ЭКРАНОВ*/
+@media (max-width: 1400px) {
+    .footer-grid {
+        gap: 30px;
+    }
+    
+    .nav a {
+        font-size: 20px;
+    }
+}
+/*дЛЯ СРЕДНИХ ЭКРАНОВ*/
+@media (max-width: 1200px) {
+    .footer-grid {
+        grid-template-columns: 1fr 0.8fr 1fr;
+    }
+    
+    .footer-col:last-child {
+        grid-column: span 3;
+    }
+    
+    .nav {
+        justify-content: center;
+        text-align: center;
+    }
+    
+    .nav-left, .nav-right {
+        justify-content: center;
+    }
+    
+    .photos {
+        flex-direction: row;
+    }
+    
+    .photo1, .photo2 {
+        width: 45%;
+    }
+}
+/*МОБУСТРОЙСТВО*/
+@media (max-width: 992px) {
+    .footer-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .footer-col:last-child {
+        grid-column: span 2;
+    }
+    
+    .footer-container {
+        padding: 0 30px;
+    }
+    
+    .end {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .photos {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .photo1, .photo2 {
+        width: 80%;
+    }
+}
+/*МОБУСТРОЙСТВО*/
+@media (max-width: 768px) {
+    .footer {
+        padding: 40px 0 0;
+    }
+    
+    .footer-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .footer-col:last-child {
+        grid-column: span 1;
+    }
+    
+    .footer-bottom {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .footer-legal {
+        justify-content: center;
+    }
+    
+    .footer-container {
+        padding: 0 20px;
+    }
+    
+    .nav a {
+        font-size: 16px;
+    }
+    
+    .nav-left, .nav-right {
+        gap: 15px;
+    }
+    
+    .logo img {
+        width: 150px;
+    }
+    
+    .photo1, .photo2 {
+        width: 90%;
+    }
+}
+
+@media (max-width: 480px) {
+    .footer-legal {
+        flex-direction: column;
+        gap: 15px;
+        align-items: center;
+    }
+    
+    .footer-social {
+        justify-content: center;
+    }
+    
+    .footer-logo {
+        text-align: center;
+    }
+    
+    .footer-title::after {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    
+    .footer-title {
+        text-align: center;
+    }
+    
+    .footer-menu a::before {
+        display: none;
+    }
+    
+    .nav {
+        flex-direction: column;
+    }
+    
+    .nav-left, .nav-right {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+    
+    h1 {
+        margin: 20px auto 30px;
+    }
+    
+    .beginig, .philosof {
+        margin: 40px auto;
+    }
+    
+    .photo1, .photo2 {
+        width: 100%;
+    }
+}
+
+/* Для очень больших экранов */
+@media (min-width: 2000px) {
+    .beginig,
+    .philosof,
+    .photos,
+    .end {
+        max-width: 1600px;
+    }
+    
+    .nav {
+        max-width: 2000px;
+    }
+}
+.header {
+    background-color: #79170c;
+    padding: 3px 0;
+}
+.nav {
+    display: flex;
+    width: 95%;
+    max-width: 1800px;
+    margin: 0 auto;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+.nav-left,
+.nav-right {
+    display: flex;
+    gap: clamp(15px, 3vw, 40px);
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.logo img {
+    width: 200px;
+    height: auto;
+    display: block;
+}
+.nav a {
+    color: white;
+    text-decoration: none;
+    font-size: clamp(14px, 2vw, 24px);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-family: 'Raleway', Arial, sans-serif;
+    white-space: nowrap;
+    transition: opacity 0.3s;
+}
+.nav a:hover {
+    opacity: 0.8; /*непрозрачность элемента*/
+}
+/* Основной контент */
+main {
+    width: 100%;
+}
+h1 {
+    text-align: center;
+    margin: 40px auto 60px;
+    font-size: clamp(28px, 5vw, 60px); /* Адаптивный текст*/
+    max-width: 1400px;
+    padding: 0 20px;
+}
+html, body {
+    margin: 0;
+    padding: 0;
+}
+.teachers-section .section-container {
+    flex-direction: column;
+}
+
+.teachers-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 40px;
+    width: 100%;
+}
+
+.teacher-card {
+    padding: 35px 25px 30px;
+    text-align: center;
+    border-radius: 30px;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+    border: 1px solid rgba(121, 23, 12, 0.1);
+}
+
+.teacher-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 30px 50px rgba(121, 23, 12, 0.2);
+    border-color: #79170c;
+}
+
+.teacher-photo {
+    width: 180px;
+    height: 180px;
+    margin: 0 auto 20px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 4px solid #79170c;
+    box-shadow: 0 15px 30px rgba(121, 23, 12, 0.2);
+}
+
+.teacher-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.teacher-card:hover .teacher-photo img {
+    transform: scale(1.1);
+}
+
+.teacher-name {
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.teacher-link {
+    color: #79170c;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    position: relative;
+    display: inline-block;
+}
+
+.teacher-link::after {
+    content: '';
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(90deg, #79170c, #b93a2c);
+    transition: width 0.3s ease;
+}
+
+.teacher-link:hover {
+    color: #b93a2c;
+}
+
+.teacher-link:hover::after {
+    width: 100%;
+}
+
+.teacher-role {
+    color: #b93a2c;
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+@media (max-width: 1200px) {
+    .section-container {
+        padding: 0 30px;
+        gap: 40px;
+    }
+}
+
+@media (max-width: 992px) {
+    .section-container {
+        flex-direction: column;
+    }
+    
+    .reverse-layout {
+        flex-direction: column;
+    }
+    
+    .split-layout {
+        flex-direction: column;
+    }
+    
+    .teachers-grid {
+        grid-template-columns: 1fr;
+        max-width: 500px;
+        margin: 0 auto;
+    }
+    
+    .direction-title {
+        font-size: clamp(3rem, 8vw, 6rem);
+    }
+}
+@media (max-width: 768px) {
+    .direction-section {
+        padding: 60px 0;
+    }
+    
+    .hero-badges {
+        gap: 10px;
+    }
+    
+    .badge {
+        padding: 8px 20px;
+        font-size: 0.9rem;
+    }
+    
+    .section-title {
+        font-size: 2rem;
+        margin-bottom: 25px;
+    }
+    
+    .split-card {
+        padding: 30px 25px;
+    }
+    
+    .split-title {
+        font-size: 1.6rem;
+    }
+    
+    .timeline-item {
+        flex-direction: column;
+        gap: 10px;
+        padding: 20px;
+    }
+    
+    .timeline-number {
+        font-size: 2.2rem;
+        min-width: auto;
+    }
+    
+    .timeline-content h4 {
+        font-size: 1.3rem;
+    }
+    
+    .teacher-card {
+        padding: 25px 20px;
+    }
+    
+    .teacher-photo {
+        width: 150px;
+        height: 150px;
+    }
+    
+    .teacher-name {
+        font-size: 1.6rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .direction-title {
+        font-size: 2.5rem;
+        letter-spacing: 4px;
+    }
+    
+    .direction-subtitle {
+        font-size: 1.2rem;
+        letter-spacing: 2px;
+    }
+    
+    .badge {
+        padding: 6px 15px;
+        font-size: 0.8rem;
+    }
+    
+    .section-container {
+        padding: 0 20px;
+        gap: 30px;
+    }
+    
+    .section-text {
+        font-size: 1rem;
+    }
+    
+    .section-text.accent {
+        font-size: 1.1rem;
+    }
+    
+    .split-card {
+        padding: 25px 20px;
+    }
+    
+    .card-icon {
+        font-size: 3rem;
+    }
+    
+    .split-title {
+        font-size: 1.4rem;
+        margin-bottom: 20px;
+    }
+    
+    .styled-list li {
+        font-size: 1rem;
+    }
+    
+    .direction-links {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 10px;
+    }
+    
+    .direction-link {
+        text-align: center;
+        padding: 12px;
+    }
+}
+
+@media (min-width: 2000px) {
+    .direction-hero {
+        max-height: 1000px;
+    }
+    
+    .section-container {
+        max-width: 1600px;
+    }
+}

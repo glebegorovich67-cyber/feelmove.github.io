@@ -1,0 +1,429 @@
+/* СТРАНИЦА ЧАСТЫХ ВОПРОСОВ */
+.faq-page {
+    width: 100%;
+    padding: 60px 0;
+}
+
+.faq-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.faq-title {
+    color: #79170c;
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.faq-title::after {
+    content: '';
+    display: block;
+    width: 150px;
+    height: 4px;
+    background: linear-gradient(90deg, #79170c, #b93a2c);
+    margin: 20px auto 0;
+    border-radius: 2px;
+}
+
+.faq-subtitle {
+    text-align: center;
+    color: #666;
+    font-size: 1.3rem;
+    margin-bottom: 60px;
+    font-family: 'Georgia', serif;
+    font-style: italic;
+}
+
+/* СПИСОК ВОПРОСОВ */
+.faq-list {
+    max-width: 900px;
+    margin: 0 auto 80px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.faq-item {
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(121, 23, 12, 0.1);
+    overflow: hidden;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(121, 23, 12, 0.1);
+}
+
+.faq-item:hover {
+    box-shadow: 0 15px 40px rgba(121, 23, 12, 0.2);
+    border-color: #79170c;
+}
+
+.faq-question {
+    padding: 25px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.faq-question:hover {
+    background: rgba(121, 23, 12, 0.02);
+}
+
+.faq-question h3 {
+    color: #333;
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin: 0;
+    flex: 1;
+    padding-right: 20px;
+}
+
+.faq-toggle {
+    color: #79170c;
+    font-size: 2rem;
+    font-weight: 300;
+    line-height: 1;
+    transition: transform 0.3s ease;
+}
+
+.faq-item.active .faq-toggle {
+    transform: rotate(45deg);
+}
+
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease, padding 0.5s ease;
+    background: #f9f9f9;
+}
+
+.faq-item.active .faq-answer {
+    max-height: 500px;
+    padding: 0 30px 25px;
+}
+
+.faq-answer p {
+    color: #666;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin: 0;
+    font-family: 'Georgia', serif;
+}
+
+/* БЛОК С КНОПКОЙ */
+.questions-trigger {
+    text-align: center;
+    margin: 60px auto 40px;
+    padding: 40px;
+    background: linear-gradient(135deg, rgba(121, 23, 12, 0.05), rgba(185, 58, 44, 0.05));
+    border-radius: 30px;
+    max-width: 600px;
+}
+
+.trigger-text {
+    color: #333;
+    font-size: 1.3rem;
+    margin-bottom: 20px;
+    font-family: 'Georgia', serif;
+}
+
+.trigger-btn {
+    background: linear-gradient(135deg, #79170c, #b93a2c);
+    color: white;
+    border: none;
+    padding: 18px 50px;
+    font-size: 1.3rem;
+    font-weight: bold;
+    letter-spacing: 2px;
+    border-radius: 60px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 10px 25px rgba(121, 23, 12, 0.3);
+    border: 2px solid transparent;
+}
+
+.trigger-btn:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(121, 23, 12, 0.4);
+    background: linear-gradient(135deg, #b93a2c, #79170c);
+    border-color: white;
+}
+
+/* ===== МОДАЛЬНОЕ ОКНО ФОРМЫ ===== */
+.feedback-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(5px);
+    z-index: 10000;
+    align-items: center;
+    justify-content: center;
+}
+
+.feedback-modal.show {
+    display: flex;
+}
+
+.feedback-modal-content {
+    position: relative;
+    width: 90%;
+    max-width: 500px;
+    background: white;
+    padding: 40px;
+    border-radius: 30px;
+    box-shadow: 0 30px 60px rgba(121, 23, 12, 0.3);
+    border: 2px solid #79170c;
+    animation: modalAppear 0.3s ease;
+    max-height: 90vh;
+    overflow-y: auto;
+}
+
+@keyframes modalAppear {
+    from {
+        opacity: 0;
+        transform: scale(0.9) translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}
+
+/* Кнопка закрытия */
+.modal-close-btn {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    background: none;
+    border: none;
+    font-size: 32px;
+    line-height: 1;
+    color: #999;
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: all 0.2s ease;
+    z-index: 10001;
+}
+
+.modal-close-btn:hover {
+    background: rgba(121, 23, 12, 0.1);
+    color: #79170c;
+    transform: rotate(90deg);
+}
+
+/* Заголовки внутри модального окна */
+.feedback-modal-content .feedback-title {
+    color: #79170c;
+    font-size: 1.8rem;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    padding-right: 30px;
+}
+
+.feedback-modal-content .feedback-subtitle {
+    text-align: center;
+    color: #666;
+    font-size: 1rem;
+    margin-bottom: 30px;
+    font-family: 'Georgia', serif;
+    padding-right: 30px;
+}
+
+/* Элементы формы */
+.form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+.form-label {
+    color: #333;
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 8px;
+    letter-spacing: 0.5px;
+}
+
+.form-input,
+.form-textarea {
+    padding: 15px 20px;
+    border: 2px solid #e0e0e0;
+    border-radius: 15px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    background: white;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.form-input:focus,
+.form-textarea:focus {
+    outline: none;
+    border-color: #79170c;
+    box-shadow: 0 5px 15px rgba(121, 23, 12, 0.1);
+}
+
+.form-textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+/* Кнопка отправки */
+.form-actions {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.submit-btn {
+    background: linear-gradient(135deg, #79170c, #b93a2c);
+    color: white;
+    border: none;
+    padding: 16px 40px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+    border-radius: 60px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 10px 25px rgba(121, 23, 12, 0.3);
+    border: 2px solid transparent;
+    width: 100%;
+}
+
+.submit-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 30px rgba(121, 23, 12, 0.4);
+    background: linear-gradient(135deg, #b93a2c, #79170c);
+    border-color: white;
+}
+
+/* Сообщение об успехе */
+.form-success {
+    margin-top: 25px;
+    padding: 20px;
+    background: linear-gradient(135deg, #4CAF50, #45a049);
+    color: white;
+    border-radius: 15px;
+    text-align: center;
+    animation: fadeIn 0.5s ease;
+}
+
+.form-success p {
+    margin: 0;
+    font-size: 1.1rem;
+}
+
+/* Анимации */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .faq-question {
+        padding: 20px;
+    }
+    
+    .faq-question h3 {
+        font-size: 1.1rem;
+    }
+    
+    .faq-answer p {
+        font-size: 1rem;
+    }
+    
+    .trigger-btn {
+        padding: 15px 35px;
+        font-size: 1.1rem;
+    }
+    
+    .feedback-modal-content {
+        padding: 30px 25px;
+        width: 95%;
+    }
+    
+    .feedback-modal-content .feedback-title {
+        font-size: 1.5rem;
+    }
+    
+    .submit-btn {
+        padding: 14px 30px;
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .faq-question {
+        padding: 15px;
+    }
+    
+    .faq-question h3 {
+        font-size: 1rem;
+    }
+    
+    .faq-answer p {
+        font-size: 0.95rem;
+    }
+    
+    .trigger-btn {
+        padding: 12px 25px;
+        font-size: 1rem;
+    }
+    
+    .trigger-text {
+        font-size: 1.1rem;
+    }
+    
+    .questions-trigger {
+        padding: 30px 20px;
+    }
+    
+    .feedback-modal-content {
+        padding: 25px 20px;
+    }
+    
+    .feedback-modal-content .feedback-title {
+        font-size: 1.3rem;
+    }
+    
+    .form-input,
+    .form-textarea {
+        padding: 12px 15px;
+    }
+    
+    .submit-btn {
+        padding: 12px 20px;
+        font-size: 0.95rem;
+    }
+    
+    .modal-close-btn {
+        top: 10px;
+        right: 15px;
+        font-size: 28px;
+    }
+}

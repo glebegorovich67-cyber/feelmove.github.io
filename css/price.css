@@ -1,0 +1,740 @@
+.price-page {
+    width: 100%;
+    padding: 60px 0;
+    background-color: transparent; /* Фон берется из site.css */
+}
+
+.price-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 40px;
+}
+
+.price-main-title {
+    text-align: center;
+    color: #79170c;
+    font-size: clamp(2.8rem, 8vw, 5rem);
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    margin-bottom: 50px;
+    position: relative;
+}
+
+.price-main-title::after {
+    content: '';
+    display: block;
+    width: 150px;
+    height: 4px;
+    background: linear-gradient(90deg, #79170c, #b93a2c);
+    margin: 20px auto 0;
+    border-radius: 2px;
+}
+
+/* ===== Табы ===== */
+.price-tabs {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-bottom: 60px;
+    border-bottom: 2px solid rgba(121, 23, 12, 0.1);
+    padding-bottom: 20px;
+}
+
+.tab-link {
+    background: none;
+    border: none;
+    padding: 12px 30px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #333;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-radius: 60px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    border: 2px solid transparent;
+}
+
+.tab-link:hover {
+    color: #79170c;
+    background: rgba(121, 23, 12, 0.05);
+}
+
+.tab-link.active {
+    background: linear-gradient(135deg, #79170c, #b93a2c);
+    color: white;
+    box-shadow: 0 5px 15px rgba(121, 23, 12, 0.3);
+}
+
+/* ===== Контент табов ===== */
+.tab-content {
+    display: none;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.tab-content.active {
+    display: block;
+    animation: fadeInUp 0.5s ease forwards;
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.price-section-title {
+    color: #79170c;
+    font-size: 2.2rem;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 50px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* ===== Сетка для групповых тарифов ===== */
+.tariff-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+.tariff-card {
+    background: white;
+    border-radius: 30px;
+    padding: 35px 25px;
+    box-shadow: 0 20px 40px rgba(121, 23, 12, 0.1);
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.tariff-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 30px 60px rgba(121, 23, 12, 0.2);
+    border-color: #79170c;
+}
+
+.tariff-name {
+    color: #79170c;
+    font-size: 2rem;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid rgba(185, 58, 44, 0.2);
+}
+
+.tariff-features {
+    flex-grow: 1;
+    margin-bottom: 25px;
+}
+
+.feature-list {
+    list-style: none;
+    padding: 0;
+}
+
+.feature-list li {
+    color: #333;
+    margin-bottom: 12px;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.feature-list li::before {
+    content: "•";
+    color: #b93a2c;
+    font-size: 1.5rem;
+    line-height: 1;
+}
+
+.price-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 15px;
+}
+
+.price-table th {
+    text-align: left;
+    color: #79170c;
+    font-weight: 600;
+    padding-bottom: 10px;
+    border-bottom: 1px solid rgba(121, 23, 12, 0.1);
+}
+
+.price-table td {
+    padding: 8px 0;
+    color: #333;
+}
+
+.price-value {
+    font-weight: bold;
+    color: #79170c;
+    text-align: right;
+}
+
+.tariff-note {
+    color: #666;
+    font-style: italic;
+    font-size: 0.9rem;
+    display: block;
+    text-align: right;
+}
+
+.price-disclaimer {
+    text-align: center;
+    color: #b93a2c;
+    font-weight: 600;
+    margin-top: 30px;
+    padding: 15px;
+    background: rgba(185, 58, 44, 0.05);
+    border-radius: 60px;
+}
+
+/* ===== Индивидуальные занятия ===== */
+.individual-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.individual-card {
+    background: white;
+    border-radius: 30px;
+    padding: 40px 25px;
+    text-align: center;
+    box-shadow: 0 20px 40px rgba(121, 23, 12, 0.1);
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.individual-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 30px 60px rgba(121, 23, 12, 0.15);
+    border-color: #79170c;
+}
+
+.individual-icon {
+    font-size: 3.5rem;
+    display: block;
+    margin-bottom: 15px;
+}
+
+.individual-card h3 {
+    color: #79170c;
+    font-size: 1.6rem;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.individual-price {
+    font-size: 2rem;
+    font-weight: 900;
+    color: #b93a2c;
+    margin-bottom: 15px;
+}
+
+.individual-description {
+    color: #666;
+    line-height: 1.5;
+    font-family: 'Georgia', serif;
+}
+
+/* ===== Свадебный танец ===== */
+.wedding-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.wedding-card {
+    background: linear-gradient(135deg, #fff5f0, #ffffff);
+    border-radius: 40px;
+    padding: 40px 30px;
+    text-align: center;
+    box-shadow: 0 20px 40px rgba(121, 23, 12, 0.15);
+    border: 2px solid #79170c;
+    transition: all 0.3s ease;
+}
+
+.wedding-card:hover {
+    transform: scale(1.02);
+    box-shadow: 0 40px 70px rgba(121, 23, 12, 0.25);
+}
+
+.wedding-card-title {
+    color: #79170c;
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.wedding-price {
+    font-size: 2.2rem;
+    font-weight: 900;
+    color: #b93a2c;
+    margin-bottom: 15px;
+}
+
+.wedding-description {
+    color: #555;
+    line-height: 1.6;
+    font-family: 'Georgia', serif;
+    margin-bottom: 15px;
+}
+
+.wedding-card small {
+    color: #888;
+    font-size: 0.9rem;
+}
+
+/* ===== Адаптивность ===== */
+@media (max-width: 992px) {
+    .price-container {
+        padding: 0 30px;
+    }
+    
+    .tariff-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .price-main-title {
+        font-size: 2.5rem;
+    }
+    
+    .price-tabs {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 10px;
+    }
+    
+    .tab-link {
+        text-align: center;
+    }
+    
+    .tariff-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .individual-grid,
+    .wedding-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .tariff-card {
+        padding: 25px 20px;
+    }
+    
+    .tariff-name {
+        font-size: 1.8rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .price-container {
+        padding: 0 20px;
+    }
+    
+    .price-main-title {
+        font-size: 2rem;
+    }
+    
+    .price-section-title {
+        font-size: 1.6rem;
+    }
+    
+    .tariff-name {
+        font-size: 1.5rem;
+    }
+    
+    .price-table td, 
+    .price-table th {
+        font-size: 0.95rem;
+    }
+    
+    .wedding-price {
+        font-size: 1.8rem;
+    }
+}
+
+/* ===== КНОПКА ДЛЯ ОТКРЫТИЯ КАЛЬКУЛЯТОРА ===== */
+.calculator-trigger {
+    text-align: center;
+    margin: 60px auto 40px;
+    padding: 40px;
+    background: linear-gradient(135deg, rgba(121, 23, 12, 0.05), rgba(185, 58, 44, 0.05));
+    border-radius: 30px;
+    max-width: 600px;
+}
+
+.calculator-trigger .trigger-text {
+    color: #333;
+    font-size: 1.3rem;
+    margin-bottom: 20px;
+    font-family: 'Georgia', serif;
+}
+
+.calculator-trigger .trigger-btn {
+    background: linear-gradient(135deg, #79170c, #b93a2c);
+    color: white;
+    border: none;
+    padding: 18px 50px;
+    font-size: 1.3rem;
+    font-weight: bold;
+    letter-spacing: 2px;
+    border-radius: 60px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 10px 25px rgba(121, 23, 12, 0.3);
+    border: 2px solid transparent;
+}
+
+.calculator-trigger .trigger-btn:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(121, 23, 12, 0.4);
+    background: linear-gradient(135deg, #b93a2c, #79170c);
+    border-color: white;
+}
+
+/* ===== МОДАЛЬНОЕ ОКНО КАЛЬКУЛЯТОРА ===== */
+.calculator-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(5px);
+    z-index: 10001;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.calculator-modal.show {
+    display: flex;
+}
+
+.calculator-modal-content {
+    background: white;
+    border-radius: 40px;
+    max-width: 1200px;
+    width: 100%;
+    max-height: 90vh;
+    overflow-y: auto;
+    padding: 40px;
+    position: relative;
+    animation: calculatorAppear 0.3s ease;
+}
+
+@keyframes calculatorAppear {
+    from {
+        opacity: 0;
+        transform: scale(0.95) translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}
+
+.calculator-modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid rgba(121, 23, 12, 0.2);
+}
+
+.calculator-modal-title {
+    color: #79170c;
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin: 0;
+}
+
+.calculator-modal-close {
+    background: none;
+    border: none;
+    font-size: 2.5rem;
+    line-height: 1;
+    color: #999;
+    cursor: pointer;
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: all 0.2s ease;
+}
+
+.calculator-modal-close:hover {
+    background: rgba(121, 23, 12, 0.1);
+    color: #79170c;
+    transform: rotate(90deg);
+}
+
+.calculator-modal-body {
+    display: grid;
+    grid-template-columns: 1fr 0.8fr;
+    gap: 50px;
+}
+
+/* ===== КАЛЬКУЛЯТОР - СТИЛИ ===== */
+.calculator-options {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.option-group {
+    background: #f9f9f9;
+    padding: 20px;
+    border-radius: 20px;
+}
+
+.option-label {
+    display: block;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 15px;
+    font-size: 1.1rem;
+}
+
+.option-buttons {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.calc-option-btn, .calc-tariff-btn, .calc-duration-btn, .calc-period-btn {
+    padding: 12px 24px;
+    background: white;
+    border: 2px solid #e0e0e0;
+    border-radius: 60px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    color: #333;
+}
+
+.calc-option-btn.active, .calc-tariff-btn.active, .calc-duration-btn.active, .calc-period-btn.active {
+    background: linear-gradient(135deg, #79170c, #b93a2c);
+    border-color: #79170c;
+    color: white;
+    box-shadow: 0 5px 15px rgba(121, 23, 12, 0.3);
+}
+
+.calc-tariff-btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+}
+
+.tariff-desc {
+    font-size: 0.8rem;
+    font-weight: normal;
+    color: #666;
+}
+
+.calc-tariff-btn.active .tariff-desc {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+/* Слайдер */
+.lessons-slider {
+    margin: 20px 0;
+}
+
+.lessons-slider input {
+    width: 100%;
+    height: 4px;
+    -webkit-appearance: none;
+    background: #e0e0e0;
+    border-radius: 5px;
+    outline: none;
+}
+
+.lessons-slider input::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 20px;
+    height: 20px;
+    background: #79170c;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(121, 23, 12, 0.3);
+}
+
+.slider-values {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+    color: #999;
+    font-size: 0.8rem;
+}
+
+.lessons-value {
+    text-align: center;
+    margin-top: 15px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #79170c;
+}
+
+.lessons-number {
+    font-size: 2rem;
+    font-weight: 900;
+}
+
+.hidden {
+    display: none;
+}
+
+/* Результат */
+.calculator-result {
+    position: relative;
+}
+
+.result-card {
+    background: linear-gradient(135deg, #f9f9f9, #ffffff);
+    border-radius: 30px;
+    padding: 40px;
+    text-align: center;
+    border: 2px solid #79170c;
+    box-shadow: 0 10px 30px rgba(121, 23, 12, 0.1);
+    position: sticky;
+    top: 20px;
+}
+
+.result-title {
+    color: #333;
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+}
+
+.result-price {
+    font-size: 3.5rem;
+    font-weight: 900;
+    color: #79170c;
+    margin-bottom: 30px;
+    letter-spacing: 2px;
+}
+
+.result-details {
+    text-align: left;
+    border-top: 1px solid #e0e0e0;
+    border-bottom: 1px solid #e0e0e0;
+    padding: 20px 0;
+    margin-bottom: 20px;
+}
+
+.detail-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 0;
+    color: #555;
+}
+
+.detail-item strong {
+    color: #79170c;
+}
+
+.result-bonus {
+    background: rgba(185, 58, 44, 0.1);
+    border-radius: 15px;
+    padding: 12px;
+    margin-bottom: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    font-size: 0.9rem;
+    color: #79170c;
+}
+
+.result-button {
+    display: inline-block;
+    background: linear-gradient(135deg, #79170c, #b93a2c);
+    color: white;
+    text-decoration: none;
+    padding: 14px 35px;
+    border-radius: 60px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    width: 100%;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.result-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(121, 23, 12, 0.3);
+}
+
+/* Адаптивность калькулятора */
+@media (max-width: 992px) {
+    .calculator-modal-body {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    
+    .result-card {
+        position: static;
+    }
+    
+    .calculator-modal-content {
+        padding: 25px;
+    }
+}
+
+@media (max-width: 768px) {
+    .calculator-modal-content {
+        padding: 20px;
+    }
+    
+    .calculator-modal-title {
+        font-size: 1.4rem;
+    }
+    
+    .option-buttons {
+        flex-direction: column;
+    }
+    
+    .calc-option-btn, .calc-tariff-btn {
+        width: 100%;
+        text-align: center;
+    }
+    
+    .result-price {
+        font-size: 2.5rem;
+    }
+    
+    .calculator-trigger .trigger-btn {
+        padding: 14px 30px;
+        font-size: 1.1rem;
+    }
+}
